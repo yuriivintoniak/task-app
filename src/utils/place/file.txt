@@ -1,0 +1,94 @@
+const columns = statuses.map((status) => {
+  const tasksInColumns = TASKS.filter((task) => task.status === status);
+  return {
+    status: status,
+    tasks: tasksInColumns
+  }
+});
+
+return (
+  <div className='flex divide-x'>
+    {tasks.map((task) => (
+      <div>
+        <h2 className='text-3xl p-2 capitalize font-bold text-gray-500'>
+          {column.status}
+        </h2>
+        <TaskCard key={task.id} task={task} />)
+      </div>
+    ))}
+  </div>
+);
+
+export type Status = 'todo' | 'in-progress' | 'done';
+
+export type Task = {
+  title: string,
+  id: number,
+  status?: Status
+};
+
+export const statuses: Status[] = ['todo', 'in-progress', 'done'];
+
+export const TASKS: Array<Task> = [
+  {
+    id: 1,
+    status: "in-progress",
+    title: 'Do market research'
+  },
+  {
+    id: 2,
+    status: "done",
+    title: 'Competitor analysis'
+  },
+  {
+    id: 3,
+    status: "done",
+    title: 'Develop Business strategy'
+  },
+  {
+    id: 4,
+    status: 'in-progress',
+    title: 'Identify potential partners'
+  },
+  {
+    id: 5,
+    status: "todo",
+    title: 'Negotiate partnerships'
+  },
+  {
+    id: 6,
+    status: "todo",
+    title: 'Develop marketing plan'
+  },
+  {
+    id: 7,
+    status: "in-progress",
+    title: 'Implement marketing plan'
+  },
+  {
+    id: 8,
+    status: "done",
+    title: 'Evaluate business performance'
+  }
+]
+
+<div key={task.id} className='border rounded-lg px-2 m-2 bg-gray-50 w-64 h-24'>
+  <h1 className='text-lg font-base py-1'>
+    {task.title}
+  </h1>
+  <p className='py-1'>
+    {task.status}
+  </p>
+  <p>{task.priority}</p>
+</div>
+
+// "editor.guides.bracketPairs": "active",
+// "workbench.colorCustomizations": {
+  // "editor.bracketPairColorization.enabled": true,
+  // "editor.guides.bracketPairs": "active",
+  // "bracket-pair-colorizer-2.colors": "Gold, Orchid, LightSkyBlue"
+  // }
+
+// onKeyDown={e => e.key === 'Enter' && inputHandler}  
+
+  

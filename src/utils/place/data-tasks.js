@@ -1,14 +1,6 @@
-export type Status = 'todo' | 'in-progress' | 'done';
+export const statuses = ['todo', 'in-progress', 'done'];
 
-export type Task = {
-  title: string,
-  id: number,
-  status?: Status
-};
-
-export const statuses: Status[] = ['todo', 'in-progress', 'done'];
-
-export const TASKS: Array<Task> = [
+export const TASKS = [
   {
     id: 1,
     status: "in-progress",
@@ -41,7 +33,7 @@ export const TASKS: Array<Task> = [
   },
   {
     id: 7,
-    status: "in-progress",
+     status: "in-progress",
     title: 'Implement marketing plan'
   },
   {
