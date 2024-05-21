@@ -7,14 +7,16 @@ const App = () => {
   const [columns, setColumns] = useState(statuses)
   const [tasks, setTasks] = useState(TASKS)
   
-  console.log(columns)
+  console.log()
 
   const addColumn = (newColumn) => {
     setColumns([...columns, newColumn])
   }
 
+  // const removeColumn
+
   const removeTask = (id) => {
-    setTasks([...tasks].filter((task) => task.id !== id));
+    setTasks([...tasks].filter((task) => task.id !== id))
   }
 
   return (
